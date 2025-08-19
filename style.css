@@ -53,12 +53,13 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* MÉTODO 1: Con imagen de fondo */
 .logopets {
     display: block;
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, var(--secondary-color), #e67e22);
-    background-image: url('images/Logo\ Tienda\ de\ Accesorios\ para\ Mascotas\ Alegre\ Café\ y\ Rosa.png'); /* CAMBIA ESTO por la ruta de tu logo */
+    background-image: url('images/logosinfondo.png'); /* CAMBIA ESTO por la ruta de tu logo */
     background-size: 70%; /* Ajusta el tamaño del logo dentro del círculo */
     background-position: center;
     background-repeat: no-repeat;
@@ -75,6 +76,14 @@ header {
 .logopets:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 16px rgba(243, 156, 18, 0.6);
+}
+
+/* MÉTODO 2: Con imagen HTML (alternativa) */
+.logopets img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain; /* Mantiene las proporciones */
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
 }
 
 .menu {
@@ -112,7 +121,7 @@ main {
 /* Sección de inicio */
 #inicio {
     background: linear-gradient(rgba(74, 144, 226, 0.8), rgba(44, 62, 80, 0.8)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%234a90e2" width="1000" height="600"/><circle fill="%23f39c12" cx="200" cy="200" r="50"/><circle fill="%23e74c3c" cx="800" cy="400" r="30"/><circle fill="%2327ae60" cx="500" cy="300" r="40"/></svg>');
+                url('images/perrosfelices.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -206,38 +215,89 @@ h2::after {
 }
 
 /* Icons */
-.destacados-icon, .vista-icon, .productos-icon, .service-icon {
+/* Icons - DESTACADOS con imágenes específicas */
+.destacados-icon {
     display: block;
     width: 60px;
     height: 60px;
     margin: 0 auto 1rem;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    position: relative;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.destacados-icon::before, .vista-icon::before, .productos-icon::before, .service-icon::before {
-    content: '🐾';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+/* CARD 1 - Calidad Premium */
+.destacados-card:nth-child(1) .destacados-icon {
+    background-image: url('images/logopremiun.png');
 }
 
-.vista-icon:nth-of-type(2)::before { content: '✂️'; }
-.vista-icon:nth-of-type(3)::before { content: '🏥'; }
-.vista-card:nth-child(3) .vista-icon::before { content: '🏨'; }
+/* CARD 2 - Profesionales Expertos */
+.destacados-card:nth-child(2) .destacados-icon {
+    background-image: url('images/vete.png');
+}
 
-.productos-icon:nth-of-type(2)::before { content: '🍖'; }
-.productos-card:nth-child(2) .productos-icon::before { content: '🎾'; }
-.productos-card:nth-child(3) .productos-icon::before { content: '🦴'; }
-.productos-card:nth-child(4) .productos-icon::before { content: '💊'; }
+/* CARD 3 - Amor por los animales */
+.destacados-card:nth-child(3) .destacados-icon {
+    background-image: url('images/veterinario.png');
+}
 
-.service-icon:nth-of-type(2)::before { content: '✂️'; }
-.service-card:nth-child(2) .service-icon::before { content: '🏥'; }
-.service-card:nth-child(3) .service-icon::before { content: '🏨'; }
-.service-card:nth-child(4) .service-icon::before { content: '🎓'; }
+/* Icons - SERVICIOS con imágenes específicas */
+.vista-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CARD 1 - Peluquería */
+.vista-card:nth-child(1) .vista-icon {
+    background-image: url('images/peluqueria.png');
+}
+
+/* CARD 2 - Veterinaria */
+.vista-card:nth-child(2) .vista-icon {
+    background-image: url('images/veterin.png');
+}
+
+/* CARD 3 - Hotel */
+.vista-card:nth-child(3) .vista-icon {
+    background-image: url('images/5-estrellas.png');
+}
+
+/* Icons - PRODUCTOS con imágenes específicas */
+.productos-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CARD 1 - Alimento Premium */
+.productos-card:nth-child(1) .productos-icon {
+    background-image: url('images/alimento.png');
+}
+
+/* CARD 2 - Juguetes */
+.productos-card:nth-child(2) .productos-icon {
+    background-image: url('images/juguete-del-perro.png');
+}
+
+/* CARD 3 - Accesorios */
+.productos-card:nth-child(3) .productos-icon {
+    background-image: url('images/accesorio.png');
+}
 
 /* Card content */
 .destacados-card h3, .vista-card h3, .productos-card h3, .service-card h3,
