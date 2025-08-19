@@ -55,15 +55,26 @@ header {
 
 .logopets {
     display: block;
-    width: 50px;
-    height: 50px;
-    background: var(--secondary-color);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary-color), #e67e22);
+    background-image: url('images/Logo\ Tienda\ de\ Accesorios\ para\ Mascotas\ Alegre\ Café\ y\ Rosa.png'); /* CAMBIA ESTO por la ruta de tu logo */
+    background-size: 70%; /* Ajusta el tamaño del logo dentro del círculo */
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 50%;
     position: fixed;
     top: 10px;
     left: 20px;
     z-index: 1001;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+    transition: all 0.3s ease;
+}
+
+.logopets:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(243, 156, 18, 0.6);
 }
 
 .menu {
